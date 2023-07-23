@@ -1,0 +1,26 @@
+<div>
+  <a href="/">🔙 Books</a>
+
+  <div class="bookdetails">
+    <div class="col-1">
+      <img src="img/<%= data.thumbnail %>" alt="<%= data.title %>" />
+    </div>
+
+    <div class="col-2">
+      <h1><%= data?.title %></h1>
+      <p><%= data?.description %></p>
+      <p>
+        <% for( let i = 0; i < data.stars; i++ ) { %>
+        <span>⭐</span>
+        <% } %>
+      </p>
+
+      <p>Category</p>
+      <ul>
+        <% data?.category?.forEach(item => { %>
+        <li><%= item %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>

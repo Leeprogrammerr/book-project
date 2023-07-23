@@ -1,0 +1,28 @@
+<div>
+  <h1>Books</h1>
+
+  <form class="filters" action="/" method="post">
+    <label>Categories</label>
+    <select name="option">
+      <option value="all">All</option>
+      <option value="romance">Romance</option>
+      <option value="science">Science</option>
+      <option value="crime">Crime</option>
+      <option value="food">Food</option>
+      <option value="adventure">Adventure</option>
+      <option value="thriller">Thriller</option>
+      <option value="fiction">Fiction</option>
+      <option value="other">other</option>
+    </select>
+  </form>
+  <ul class="books">
+    <% data.forEach(item => { %>
+    <li>
+      <a href="<%= item.slug %>">
+        <img alt="<%= item.title %>" src="img/<%= item.thumbnail %>" />
+        <h3><%= item.title %></h3>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+</div>
