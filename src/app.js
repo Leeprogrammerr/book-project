@@ -5,6 +5,8 @@ const connectDB = require("../config/db");
 const expressLayout = require("express-ejs-layouts");
 const mainRouter = require("../routers/main.router");
 const bookDetailRouter = require("../routers/bookDetail.router");
+const bookRouter = require("../routers/book.router");
+
 const app = express();
 
 //
@@ -20,6 +22,7 @@ connectDB();
 
 // routes middleware
 app.use(mainRouter);
+app.use(bookRouter);
 app.use(bookDetailRouter);
 
 module.exports = app;

@@ -5,10 +5,12 @@ const bookDetailController = async (req, res) => {
     const data = await BookModel.findOne({ slug });
 
     if (!data) {
-      return res.status(404).json("not found");
+      return res.status(404).json("This page not found");
     }
     res.render("bookDetail", { data });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 module.exports = bookDetailController;
